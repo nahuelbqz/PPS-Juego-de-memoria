@@ -1,0 +1,96 @@
+<ion-content>
+
+  <!-- Botón flotante IZQUIERDA -->
+  <div class="boton-contenedor izquierda" *ngIf="!dificultad" (click)="cerrarSesion()">
+    <ion-img src="../../../assets/logout.png"></ion-img>
+  </div>
+
+  <!-- Botón flotante DERECHA -->
+  <div class="boton-contenedor derecha" *ngIf="!dificultad" (click)="goTo('/leaderboard')">
+    <ion-img src="../../../assets/leaderboard.png"></ion-img>
+  </div>
+  <div class="container">
+    <ion-title *ngIf="!dificultad" class="titulo-principal">Elegí un nivel</ion-title>
+
+    <div class="contenedor-botones" *ngIf="!dificultad">
+      <div class="boton-numero" (click)="elegirNivel(1)">
+        <ion-title class="ion-text-center" style="font-size:xx-large">Fácil</ion-title>
+      </div>
+
+      <div class="boton-numero" (click)="elegirNivel(2)">
+        <ion-title class="ion-text-center" style="font-size:xx-large">Medio</ion-title>
+      </div>
+
+      <div class="boton-numero" (click)="elegirNivel(3)">
+        <ion-title class="ion-text-center" style="font-size:xx-large">Difícil</ion-title>
+      </div>
+    </div>
+
+    <!-- ANIMALES -->
+    <div class="contenedor-carta-animal" *ngIf="dificultad === 'Facil'">
+      <div class="carta-animal" *ngFor="let item of cartas" (click)="jugar(item.id)">
+        <div class="flip-container-animal" id="{{item.id}}">
+          <div class="flipper-animal">
+
+            <div class="front-animal">
+              <img src="../../../assets/questionmark.png" alt="pregunta">
+            </div>
+
+            <div class="back-animal">
+              <img src="{{item?.urlImagen}}" alt="">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <ion-button (click)="volverAlMenu()" expand="block" fill="clear" shape="round" class="btn-volver">
+        Volver al menú
+      </ion-button>
+    </div>
+
+    <!-- HERRAMIENTAS -->
+    <div class="contenedor-cartas-herramienta" *ngIf="dificultad === 'Medio'">
+      <div class="carta-herramienta" *ngFor="let item of cartas" (click)="jugar(item.id)">
+        <div class="flip-container-herramienta" id="{{item.id}}">
+          <div class="flipper-herramienta">
+
+            <div class="front-herramienta">
+              <img src="../../../assets/questionmark.png" alt="pregunta">
+            </div>
+
+            <div class="back-herramienta">
+              <img src="{{item?.urlImagen}}" alt="">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <ion-button (click)="volverAlMenu()" expand="block" fill="clear" shape="round" class="btn-volver">
+        Volver al menú
+      </ion-button>
+    </div>
+
+    <!-- FRUTAS -->
+    <div class="contenedor-cartas-fruta" *ngIf="dificultad === 'Dificil'">
+      <div class="carta-fruta" *ngFor="let item of cartas" (click)="jugar(item.id)">
+        <div class="flip-container-fruta" id="{{item.id}}">
+          <div class="flipper-fruta">
+
+            <div class="front-fruta">
+              <img src="../../../assets/questionmark.png" alt="pregunta">
+            </div>
+
+            <div class="back-fruta">
+              <img src="{{item?.urlImagen}}" alt="">
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <ion-button (click)="volverAlMenu()" expand="block" fill="clear" shape="round" class="btn-volver">
+        Volver al menú
+      </ion-button>
+
+    </div>
+  </div>
+</ion-content>

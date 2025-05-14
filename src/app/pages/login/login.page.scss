@@ -1,0 +1,71 @@
+ion-content {
+  --background: radial-gradient(
+    circle,
+    rgb(103, 202, 209) 8%,
+    rgb(3, 58, 75) 100%
+  );
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6);
+}
+
+.line {
+  height: 3px;
+  width: 95%;
+  background-color: #000;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0px 2px 2px rgb(255, 255, 255);
+}
+
+.text-sm {
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
+ion-input,
+textarea {
+  padding: 10px 12px;
+  border: 2px solid #000;
+  border-radius: 20px;
+  margin: 5px auto;
+  width: 80%;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: #fff;
+  display: block;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: none !important;
+  border: 2px solid #fff;
+  outline-width: 0;
+}
+
+ion-button:focus {
+  box-shadow: none !important;
+  outline-width: 0;
+}

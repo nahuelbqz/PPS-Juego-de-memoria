@@ -1,0 +1,21 @@
+ion-content {
+  --background: radial-gradient(
+    circle,
+    rgb(103, 202, 209) 8%,
+    rgb(3, 58, 75) 100%
+  );
+  color: #fff;
+}
+
+.container {
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+}
+
+.top-container {
+  background-color: #fff;
+  margin-bottom: 30px;
+  height: auto;
+  border-radius: 20px;
+}

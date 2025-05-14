@@ -1,0 +1,36 @@
+<ion-content>
+  <div class="container">
+    <div class="top-container">
+      <ion-list>
+        <ion-title>TOP 5 - Fácil</ion-title>
+        <ng-container *ngFor="let item; let i = index of scoresFacil">
+          <ion-item>
+            <ion-label>#{{i+1}} - {{item.tiempo}} - {{item.user}}</ion-label>
+          </ion-item>
+        </ng-container>
+      </ion-list>
+    </div>
+
+    <div class="top-container">
+      <ion-list>
+        <ion-title>TOP 5 - Medio</ion-title>
+        <ng-container *ngFor="let item; let i = index of scoresMedio">
+          <ion-item>
+            <ion-label>#{{i+1}} - {{item.tiempo}} - {{item.user}}</ion-label>
+          </ion-item>
+        </ng-container>
+      </ion-list>
+    </div>
+
+    <div class="top-container">
+      <ion-list>
+        <ion-title>TOP 5 - Difícil</ion-title>
+        <ng-container *ngFor="let item; let i = index of scoresDificil">
+          <ion-item>
+            <ion-label>#{{i+1}} - {{item.tiempo}} - {{item.user}}</ion-label>
+          </ion-item>
+        </ng-container>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

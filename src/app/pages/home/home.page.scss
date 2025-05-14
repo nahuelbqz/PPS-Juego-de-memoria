@@ -1,0 +1,368 @@
+ion-content {
+  --background: radial-gradient(
+    circle,
+    rgb(103, 202, 209) 8%,
+    rgb(3, 58, 75) 100%
+  );
+  color: #fff;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.boton-contenedor {
+  position: fixed;
+  top: 45px;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.boton-contenedor ion-img {
+  width: 30px;
+  height: 30px;
+}
+.boton-contenedor.izquierda {
+  left: 20px;
+}
+.boton-contenedor.derecha {
+  right: 20px;
+}
+
+.dificultades ion-button {
+  margin: 10px 0;
+}
+
+.timer {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.tablero {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.tablero.facil {
+  grid-template-columns: repeat(3, 60px);
+}
+.tablero.medio {
+  grid-template-columns: repeat(5, 60px);
+}
+.tablero.dificil {
+  grid-template-columns: repeat(4, 60px);
+}
+
+.carta {
+  background-color: #ffffff;
+  color: #000;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.carta.destapada {
+  background-color: #4caf50;
+  color: white;
+}
+
+/////
+
+.titulo-principal {
+  text-align: center;
+  margin-top: 110px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+.contenedor-botones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.boton-numero {
+  width: 90%;
+  background-color: #1f506d;
+  margin-top: 65px;
+  height: 120px;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 25px;
+  border: 6px solid rgb(0, 0, 0);
+}
+.boton-numero:hover {
+  background-color: #014973;
+}
+
+#container a {
+  text-decoration: none;
+}
+.rotating-image {
+  animation: rotate 4.5s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.btn-volver {
+  color: white;
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 20px;
+  text-decoration: underline;
+}
+//ANIMALES
+.contenedor-carta-animal {
+  margin-top: 50px;
+  padding: 5px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.carta-animal {
+  height: 220px !important;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+  margin: 0 7px 0 7px;
+}
+
+.flip-container-animal {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.icon-back {
+  width: 50px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.flipper-animal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.front-animal,
+.back-animal {
+  width: 100%;
+  height: 210px;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 50%;
+  }
+  transform-style: preserve-3d;
+}
+
+.front-animal {
+  background-color: #0b5681;
+  border-radius: 10px;
+}
+
+.back-animal {
+  background-color: #0d77b5;
+  border-radius: 10px;
+  transform: rotateY(180deg);
+}
+
+//HERRAMIENTAS
+
+.contenedor-cartas-herramienta {
+  margin-top: 10px;
+  padding: 8px;
+  height: 100%;
+  width: 100% !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.carta-herramienta {
+  height: 150px !important;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+  margin: 0 7px 0 7px;
+  .back {
+    img {
+      height: 50px;
+    }
+  }
+}
+.flip-container-herramienta {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+
+  // margin-bottom: 15px;
+}
+
+.flipper-herramienta {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.front-herramienta,
+.back-herramienta {
+  width: 100%;
+  height: 140px;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 60%;
+  }
+  transform-style: preserve-3d;
+}
+
+.front-herramienta {
+  background-color: #0b5681;
+  border-radius: 10px;
+}
+
+.back-herramienta {
+  background-color: #0d77b5;
+  border-radius: 10px;
+  transform: rotateY(180deg);
+}
+
+//FRUTAS
+
+.contenedor-cartas-fruta {
+  margin-top: 12px;
+  padding: 5px;
+  height: 100%;
+  width: 100% !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.carta-fruta {
+  height: 100px !important;
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+  margin: 0 7px 0 7px;
+  // margin: 0 15px 0 15px;
+  .back {
+    img {
+      height: 50px;
+    }
+  }
+}
+.flip-container-fruta {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+
+  // margin-bottom: 15px;
+}
+
+.flipper-fruta {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.front-fruta,
+.back-fruta {
+  width: 80%;
+  height: 90px;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    height: 80%;
+  }
+  transform-style: preserve-3d;
+}
+
+.front-fruta {
+  background-color: #0b5681;
+  border-radius: 10px;
+}
+
+.back-fruta {
+  background-color: #0d77b5;
+  border-radius: 10px;
+  transform: rotateY(180deg);
+}

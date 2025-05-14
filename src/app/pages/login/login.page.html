@@ -1,0 +1,61 @@
+<ion-content>
+  <div class="container">
+    <h1 class="titulo" style="color: black; font-weight: 50px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6);">Inicio de sesión</h1>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="row px-3">
+        <div class="line"></div>
+      </div>
+
+      <div class="row px-3">
+        <label>
+          <h6 class="mb-0 text-sm" style="color: black;">Dirección de Correo</h6>
+        </label>
+        <ion-input type="email" placeholder="Correo" formControlName="email" autocomplete="email"></ion-input>
+      </div>
+
+      <div class="row px-3" style="padding-left: 20px; padding-right: 20px">
+        <label>
+          <h6 class="mb-0 text-sm" style="color: black;">Contraseña</h6>
+        </label>
+        <ion-input [type]="hidePassword ? 'password' : 'text'" formControlName="password"
+          autocomplete="current-password" placeholder="Contraseña">
+          <ion-button (click)="hidePassword = !hidePassword" slot="end" fill="clear" shape="round">
+            <ion-icon [name]="hidePassword ? 'eye-outline' : 'eye-off-outline'" slot="icon-only"></ion-icon>
+          </ion-button>
+        </ion-input>
+      </div>
+
+      <div class="row mb-3 px-3">
+        <ion-button class="ion-margin-top" expand="block" mode="ios" type="submit" [disabled]="form.invalid">
+          Iniciar sesión
+        </ion-button>
+      </div>
+
+      <div class="row px-3">
+        <div class="line"></div>
+      </div>
+    </form>
+
+    <img src="../../../assets/logo.png" alt="logo" style="height: 300px;" />
+  </div>
+
+  <!-- FAB (Botón flotante) -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="settings-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="autocompletarUsuario('A')" title="Admin">
+        <ion-icon name="shield-outline" style="color: black;"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="autocompletarUsuario('B')" title="Invitado">
+        <ion-icon name="person-outline" style="color: black;"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="autocompletarUsuario('C')" title="Usuario">
+        <ion-icon name="person-circle-outline" style="color: black;"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+</ion-content>
